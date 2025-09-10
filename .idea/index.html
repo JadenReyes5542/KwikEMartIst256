@@ -8,11 +8,10 @@
 
 <header>
     <div>
-        <img src="logo-placeholder.png" alt="KwikEMart Logo" width="80" height="80">
+        <img src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/KwikEMart.jpg" alt="KwikEMart Logo" width="80" height="80">
         <h1>KwikEMart</h1>
         <p>Welcome to KwikEMart. DON'T STEAL!</p>
     </div>
-
 
     <nav>
         <ul>
@@ -26,7 +25,6 @@
     </nav>
 </header>
 
-
 <main>
     <section>
         <h2>Great Deals Just for You</h2>
@@ -37,7 +35,7 @@
         </article>
 
         <article>
-            <h3>Duff Beer Bundle – Buy 1, Get 1 for your son!</h3>
+            <h3>Duff Beer – Buy 1, Get 1 for your son!</h3>
             <p>Stay connected with your son you only see once a month with our Duff beer. Buy one for yourself and buy one to your son you!</p>
         </article>
     </section>
@@ -61,5 +59,29 @@
     </ul>
 </footer>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const donutImg = '<img src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/Simpons%20Donut.png" alt="Donut" width="25" height="25">';
+        const duffImg = '<img src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/Duff%20Beer%20Simpons.png" alt="Duff Beer" width="25" height="25">';
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+
+        while (walker.nextNode()) {
+            const node = walker.currentNode;
+            const text = node.textContent;
+
+            const replacedText = text
+                .replace(/\b(donuts?)\b/gi, match => `${match} ${donutImg}`)
+                .replace(/\bduff\s+beer\b/gi, match => `${match} ${duffImg}`);
+
+            if (replacedText !== text) {
+                const span = document.createElement("span");
+                span.innerHTML = replacedText;
+                node.parentNode.replaceChild(span, node);
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
+
