@@ -1,87 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>KwikEMart</title>
+
+    <!-- External CSS (requirement #1) -->
+    styles.css
+
+    <!-- Internal CSS (requirement #2): small, critical bits only -->
+    <style>
+        :root {
+            --brand: #0f8bff;
+            --brand-dark: #0a62b3;
+            --ink: #1b1f24;
+            --muted: #5a6472;
+            --bg: #f6f8fb;
+            --card: #ffffff;
+            --ring: rgba(15, 139, 255, 0.3);
+        }
+
+        /* Highlight current page in nav */
+        nav a[aria-current="page"] {
+            font-weight: 700;
+            border-bottom: 2px solid var(--brand);
+        }
+
+        /* Accessible skip link */
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-link:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            padding: .5rem 1rem;
+            background: #000;
+            color: #fff;
+            border-radius: .25rem;
+        }
+    </style>
 </head>
 <body>
+#mainSkip to main content</a>
 
-<header>
-    <div>
-        <img src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/KwikEMart.jpg" alt="KwikEMart Logo" width="80" height="80">
-        <h1>KwikEMart</h1>
-        <p>Welcome to KwikEMart. DON'T STEAL!</p>
+<header class="site-header">
+    <div class="brand">
+        <img
+                src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/KwikEMart.jpg"
+                alt="KwikEMart logo"
+                width="80"
+                height="80"
+        <p style="font-style: italic; color:#5a6472; margin-top:.25rem;">
+            Welcome to KwikEMart — grab what you need in a heartbeat.
+        </p>
+    </div>
     </div>
 
-    <nav>
+    <nav class="primary-nav" aria-label="Primary">
         <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="cart.html">Shopping Cart</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="index.html" aria       <li>about.htmlAbout Us</a></li>
+            <li><a href="products.html/a></li>
+        <li><a href="Shopping Cart</a></li>
+            <li>login.htmlLogin</a></li>
+            <li>contact.htmlContact Us</a></li>
         </ul>
     </nav>
 </header>
 
-<main>
-    <section>
-        <h2>Great Deals Just for You</h2>
+<main id="main" class="content">
+    <!-- Hero -->
+    <section class="hero" role="banner" aria-label="Featured">
+        <div class="hero__text">
+            <h2>Great Deals, Fast Checkout</h2>
+            <p>Fresh snacks, cold drinks, and everyday essentials—right around the corner.</p>
+            <!-- Inline CSS example #2 -->
+            <a href="products.html" class="btn btn--primary"
+               style="background: linear-gradient(90deg, var(--brandin deals -->
+      <section aria-labelledby="deals-heading" class="grid">
+            <h2 id="deals-heading">This Week’s Picks</h2>
 
-        <article>
-            <h3>Donuts – 0% Off</h3>
-            <p>Immerse yourself in the pink Donuts that we offer. These Donuts are perfect for fat slobes and cops alike. Grab yours before the deal ends!</p>
-        </article>
+            <article class="card">
+                <h3>Pink Frosted Donuts</h3>
+                <p>Iconic, fluffy, and delicious—grab a box for your next break.</p>
+            </article>
 
-        <article>
-            <h3>Duff Beer – Buy 1, Get 1 for your son!</h3>
-            <p>Stay connected with your son you only see once a month with our Duff beer. Buy one for yourself and buy one to your son you!</p>
-        </article>
+            <article class="card">
+                <h3>Duff™ Root Beer (Non‑Alcoholic)</h3>
+                <p>Classic taste, family‑friendly fizz. 12‑packs ready to go.</p>
+            </article>
     </section>
+
+    <!-- Sidebar promos -->
+    <aside class="sidebar" aria-labelledby="promos-heading">
+        <h2 id="promos-heading">Promotions &amp; Perks</h2>
+        <ul>
+            <li>Join our newsletter for members‑only deals</li>
+            <li>Free standard shipping on orders over $50</li>
+            <li>Exclusive flash sales every Friday</li>
+        </ul>
+    </aside>
+    </div>
 </main>
 
-<aside>
-    <h2> Promotions & Perks</h2>
-    <ul>
-        <li> Subscribe to our newsletter and get 0% off your first order</li>
-        <li> Considered shipping on orders over $50</li>
-        <li> Exclusive member-only flash sales</li>
+<footer class="site-footer">
+    <p>Thank you—come again!</p>
+    <ul class="legal">
+        <li><a href="lTerms of Use</a></li>
+      <li>privacy.htmlCookie &amp; Privacy Policy</a></li>
+      <li>copyright.html© 2025 KwikEMart</a></li>
     </ul>
-</aside>
+  </footer>
 
-<footer>
-    <p>Thanks you come again!</p>
-    <ul>
-        <li><a href="terms.html">Terms of Use</a></li>
-        <li><a href="privacy.html">Cookie & Privacy Policy</a></li>
-        <li><a href="copyright.html">© 2025 NovaMart</a></li>
-    </ul>
-</footer>
-
-<script>
+  <!-- JS: text-to-icon feature -->
+  <script defer>
     document.addEventListener("DOMContentLoaded", function() {
-        const donutImg = '<img src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/Simpons%20Donut.png" alt="Donut" width="25" height="25">';
-        const duffImg = '<img src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/Duff%20Beer%20Simpons.png" alt="Duff Beer" width="25" height="25">';
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+            const donutImg = '<img src="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/Simpons%20Donut.png" alt="Donut" width="20rc="https://raw.githubusercontent.com/JadenReyes5542/kwikemart-siteReyes/main/Duff%20Beer%20Simpons.png" alt="Duff Root Beer"t.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+            const targets = [];
 
-        while (walker.nextNode()) {
+            // Collect nodes first to avoid live-DOM issues during replacement
+            while (walker.nextNode()) {
             const node = walker.currentNode;
-            const text = node.textContent;
-
-            const replacedText = text
-                .replace(/\b(donuts?)\b/gi, match => `${match} ${donutImg}`)
-                .replace(/\bduff\s+beer\b/gi, match => `${match} ${duffImg}`);
-
-            if (replacedText !== text) {
-                const span = document.createElement("span");
-                span.innerHTML = replacedText;
-                node.parentNode.replaceChild(span, node);
+            if (node.parentElement && !/SCRIPT|STYLE/.test(node.parentElement.tagName)) {
+            targets.push(node);
             }
-        }
-    });
-</script>
+            }
 
+            targets.forEach(node => {
+            const text = node.textContent;
+            const replaced = text
+            .replace(/\b(donuts?)\b/gi, match => `${match} ${donutImg}`)
+            .replace(/\bduff\s+(root\s+)?beer\b/gi, match => `${match} ${duffImg}`);
+
+            if (replaced !== text) {
+            const span = document.createElement("span");
+            span.innerHTML = replaced;
+            node.parentNode.replaceChild(span, node);
+            }
+            });
+            });
+            </script>
 </body>
 </html>
-
